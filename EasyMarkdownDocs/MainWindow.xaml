@@ -5,8 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EasyMarkdownDocs"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="EasyMarkdownDocs" Height="450" Width="800"
+        SizeChanged="Window_SizeChanged"
+        Loaded="Window_Loaded"
+        StateChanged="Window_StateChanged">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
 
+        <TreeView Name="ContentTree">
+            <TreeView.ContextMenu>
+                <ContextMenu Name="ContentTreeCM">
+                    <MenuItem Header="New folder"></MenuItem>
+                </ContextMenu>
+            </TreeView.ContextMenu>
+        </TreeView>
+
+        <Grid Name="MainContent" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Menu Name="MainMenu">
+                <MenuItem Header="File">
+                    <MenuItem Header="Open folder"></MenuItem>
+                </MenuItem>
+            </Menu>
+        </Grid>
     </Grid>
 </Window>
