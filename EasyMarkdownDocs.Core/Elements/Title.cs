@@ -35,5 +35,34 @@ namespace EasyMarkdownDocs.Core.Elements
             TopBottom = 3, // ###
             Bottom =    4  // ####
         }
+
+        public new string GenerateContent()
+        {
+            string content = "";
+            switch (Level)
+            {
+                case TitleLevel.Top:
+                    content += "# ";
+                    break;
+                case TitleLevel.TopMiddle:
+                    content += "## ";
+                    break;
+                case TitleLevel.TopBottom:
+                    content += "### ";
+                    break;
+                case TitleLevel.Bottom:
+                    content += "#### ";
+                    break;
+            }
+
+            content += TitleContent;
+
+            if(!string.IsNullOrEmpty(TitleDescription))
+            {
+                content += $"\n{TitleDescription}";
+            }
+
+            return content;
+        }
     }
 }

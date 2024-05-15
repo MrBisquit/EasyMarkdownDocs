@@ -25,6 +25,7 @@
         public class PageElement
         {
             public string Id { get; set; } // Guid.NewGuid().ToString()
+            public extern string GenerateContent();
         }
     }
 }
