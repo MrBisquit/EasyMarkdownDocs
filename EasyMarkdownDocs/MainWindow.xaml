@@ -31,7 +31,8 @@
 
             <Menu Name="MainMenu">
                 <MenuItem Header="File">
-                    <MenuItem Header="Open folder"></MenuItem>
+                    <MenuItem Header="Open" Name="MMFOpen" Click="MMFOpen_Click"></MenuItem>
+                    <MenuItem Header="Open folder" Name="MMFOpenFolder" Click="MMFOpenFolder_Click"></MenuItem>
                 </MenuItem>
             </Menu>
         </Grid>

@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using EasyMarkdownDocs.Core;
+using Ookii.Dialogs.Wpf;
+using System.Windows;
 
 namespace EasyMarkdownDocs
 {
@@ -11,6 +13,8 @@ namespace EasyMarkdownDocs
         {
             InitializeComponent();
         }
+
+        ProjectInfo instance;
 
         private void ResizeContent()
         {
@@ -36,6 +40,25 @@ namespace EasyMarkdownDocs
         private void Window_StateChanged(object sender, EventArgs e)
         {
             ResizeContent();
+        }
+
+        private void MMFOpen_Click(object sender, RoutedEventArgs e)
+        {
+            VistaOpenFileDialog ofd = new VistaOpenFileDialog();
+            if((bool)ofd.ShowDialog())
+            {
+                instance = ProjectInfo.Load(ofd.FileName);
+                
+                if(instance == null)
+                {
+                    MessageBox.Show("Failed to load EasyMarkdownDocs instance", "EasyMarkdownDocs - Failed", MessageBoxButton.OK, MessageBoxImage.Error, MessageBoxResult.OK, MessageBoxOptions.None);
+                }
+            }
+        }
+
+        private void MMFOpenFolder_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
