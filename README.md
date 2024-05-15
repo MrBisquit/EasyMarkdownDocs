@@ -9,3 +9,5 @@ Making it easy to generate good-looking Markdown docs for your project! Just a f
 - [ ] Indexes (Telling you speficically where things are)
 - [ ] Automatic content tree generator
 - [ ] Automatic file scanner (Matching keywords, specific language support may take a while)
+- [ ] Resource managements (Photos for pages, inserting colour changing icons based on GitHub theme, GitHub specific feature)
+And much more!
