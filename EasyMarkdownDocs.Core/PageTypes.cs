@@ -2,6 +2,14 @@
 {
     public static class PageTypes
     {
+        public class Directory
+        {
+            public int Id { get; set; }
+            public string Name { get; set; }
+            public string RelativeLocation { get; set; }
+
+            public List<PageElement> Elements { get; set; }
+        }
         public class Page
         {
             public int Id { get; set; }

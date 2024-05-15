@@ -16,6 +16,14 @@ namespace EasyMarkdownDocs.Core.Elements
             this.Id = Id;
         }
 
+        public Title(string Id, TitleLevel level, string titleContent, string? titleDescription)
+        {
+            this.Id = Id;
+            Level = level;
+            TitleContent = titleContent;
+            TitleDescription = titleDescription;
+        }
+
         public TitleLevel Level { get; set; } = TitleLevel.Top;
         public string TitleContent { get; set; }
         public string? TitleDescription { get; set; } // A little bit of text underneath, like a short description

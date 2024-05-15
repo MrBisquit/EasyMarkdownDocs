@@ -13,6 +13,12 @@ namespace EasyMarkdownDocs.Core.Elements
             this.Id = Id;
         }
 
-        public string Content;
+        public TextBlock(string Id, string Content)
+        {
+            this.Id = Id;
+            this.Content = Content;
+        }
+
+        public string Content { get; set; }
     }
 }
