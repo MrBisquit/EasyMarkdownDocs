@@ -16,8 +16,8 @@ namespace EasyMarkdownDocs.Core
         public string Name { get; set; }
         public string Description { get; set; }
         public string Version { get; set; }
-        public PageTypes.Directory RootDirectory;     // Any files existing in the relative path of `/`
-        public List<PageTypes.Directory> Directories; // Any directories (Subdirectories are also contained within here to avoid any complications and make it easier to manage)
+        public PageTypes.Directory RootDirectory = new PageTypes.Directory();           // Any files existing in the relative path of `/`
+        public List<PageTypes.Directory> Directories = new List<PageTypes.Directory>(); // Any directories (Subdirectories are also contained within here to avoid any complications and make it easier to manage)
 
         // Functions
         public static void Save(string location, ProjectInfo instance)

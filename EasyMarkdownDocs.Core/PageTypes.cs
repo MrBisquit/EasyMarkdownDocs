@@ -8,7 +8,7 @@
             public string Name { get; set; }
             public string RelativeLocation { get; set; }
 
-            public List<PageElement> Elements { get; set; }
+            public List<Page> Pages { get; set; } = new List<Page>();
         }
         public class Page
         {
@@ -16,7 +16,7 @@
             public string Name { get; set; }
             public string RelativeLocation { get; set; }
 
-            public List<PageElement> Elements { get; set; }
+            public List<PageElement> Elements { get; set; } = new List<PageElement>();
         }
 
         /// <summary>
@@ -25,6 +25,7 @@
         public class PageElement
         {
             public string Id { get; set; } // Guid.NewGuid().ToString()
+            public string Name { get; set; } // Nice name
             public extern string GenerateContent();
         }
     }
